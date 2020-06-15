@@ -1,26 +1,48 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { withRouter, Switch, Route } from 'react-router-dom'; 
+import { connect } from 'react-redux';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import * as AsyncComponents from './containers/asyncComponentImports'; 
+
+import Layout from './hoc/Layout/Layout'; 
+import LandingView from './components/LandingView/LandingView'; 
+
+class App extends Component {
+  
+  render() {    
+
+    if(window.soundManager){
+    window.soundManager.setup({debugMode: false}); // Remove react-sound debugging text
+  }
+
+  let routes = (
+    <Switch>
+      <Route path='/'/>
+    </Switch>
+  ); 
+
+  if(this.props.isAuthenticated){
+    routes = (
+      <Switch>
+        <Route path='/dashboard/:siteKey' component={AsyncComponents.Dashboard} />
+        <Route path='/alarm/:siteKey' component={AsyncComponents.Alarm} />
+        <Route path='/' />
+      </Switch>
+    );
+  }
+
+    return (
+        <Layout>
+          {routes}
+        </Layout>
+    );
+  }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    isAuthenticated: true
+  }
+}
+
+export default withRouter(connect(mapStateToProps)(App));
