@@ -25,7 +25,7 @@ export const fetchSiteFail = (error) => {
 export const fetchSite = (apiKey, siteKey) => {
 	return dispatch => {
 		dispatch(fetchSiteStart());
-		const url = '/site/get/' + siteKey + '/'  apiKey;
+		const url = '/site/get/' + siteKey + '/' + apiKey;
 		return axios.get(url)
 			.then(res => {
 				let site = res.data;

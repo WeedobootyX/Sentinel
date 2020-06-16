@@ -5,15 +5,10 @@ import { connect } from 'react-redux';
 import * as AsyncComponents from './containers/asyncComponentImports'; 
 
 import Layout from './hoc/Layout/Layout'; 
-import LandingView from './components/LandingView/LandingView'; 
 
 class App extends Component {
   
   render() {    
-
-    if(window.soundManager){
-    window.soundManager.setup({debugMode: false}); // Remove react-sound debugging text
-  }
 
   let routes = (
     <Switch>
