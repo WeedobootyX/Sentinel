@@ -1,4 +1,4 @@
-import asyncComponent from '../asyncComponent/asyncComponent'; 
+import asyncComponent from '../hoc/asyncComponent/asyncComponent'; 
 
 export const Dashboard = asyncComponent(() => {
 	return import('./Dashboard/Dashboard');
