@@ -39,4 +39,4 @@ const mapDispatchToProps = dispatch => {
 	}
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(WaitingView); 
+export default connect(mapStateToProps, mapDispatchToProps)(Alarm); 

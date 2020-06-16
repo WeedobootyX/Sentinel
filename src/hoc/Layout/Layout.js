@@ -34,54 +34,23 @@ class Layout extends Component {
 	}
 
 	onLogoClicked = () => {
-		const path = '/menu/' + this.props.menu.restaurant.restaurantKey;
+		const path = '/menu/';
 		this.props.history.push(path);
 	}
 
 	render(){
 		const strings = new LocalizedStrings(Localizations.localizations); 
 		let jsx = (<Aux>
-						{this.props.location.pathname === "/menu/" + this.props.menu.restaurant.restaurantKey || 
-						 this.props.location.pathname === "/order" ? (<Toolbar 
-							isAuth={this.props.isAuthenticated}
-							clicked={this.sideDrawerOpenedHandler}
-							checkoutClicked={this.checkOutButtonClickedHandler}
-							logoClicked={this.onLogoClicked} 
-							color={this.props.settings.restaurantSettings.headerColor}
-						/>) : null}
-
-						<main id={'mainContainer'} className={classes.Content}>
-							{this.props.children}
-							<Alert 
-								show={this.state.showCheckoutWarning}>					
-									<div id="alertContent">
-										<p>{strings.pleaseMakeOrder}</p>
-									</div>				
-							</Alert>
-
-							{this.state.mainComponentWidth ? 
-								<Navbar 
-									width={this.state.mainComponentWidth} 
-									checkoutClicked={this.checkOutButtonClickedHandler} 
-									menuClicked={this.menuButtonClickedHandler}
-									show={this.props.order.orderRows.length > 0 && !this.props.location.pathname.includes("/waiting-view")}
-									isMenu={this.props.location.pathname === "/menu/" + this.props.menu.restaurant.restaurantKey}
-								 /> 
-							: null}
-
-						</main>	
-
+						<p>dummy content</p>
 					</Aux>)
 
-		let mainJsx = (this.props.children); 
-
-		return this.props.menu.restaurant.restaurantId !== undefined ? jsx : mainJsx
+		return jsx;
 	}
 }
 
 const mapStateToProps = (state) => {
 	return {
-		null
+		dummy: state
 	}
 }
 

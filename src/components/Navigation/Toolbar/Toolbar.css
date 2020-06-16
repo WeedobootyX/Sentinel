@@ -1,0 +1,44 @@
+.Toolbar {
+	height: 56px;
+	width: 100%; 
+	position: fixed;
+	top: 0;
+	left: 0;
+	display:flex;
+	justify-content: center;
+	align-items: center; 
+	padding:0 20px;
+	box-sizing: border-box;
+	z-index: 90; 
+	text-align: center; 
+	float:left;
+}
+
+.Toolbar nav{
+	height:100%;
+	text-align:right;
+}
+
+.Logo {
+	text-align: center;
+}
+
+.HeaderContainer{
+	text-align:center;
+	width: 100%;
+}
+
+.Toolbar h4{
+	flex-grow:1;
+	display:inline-block;
+}
+
+.CheckoutContainer{
+	float:right;
+}
+
+@media (max-width: 499px){
+	.DesktopOnly{
+		display:none; 
+	}
+}
