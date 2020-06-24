@@ -1,6 +1,6 @@
 import * as actionTypes from './actionTypes'; 
 import * as actions from './index';
-import axios from '../../axios-orders'; 
+import axios from '../../axios-patriot'; 
 
 export const fetchAlarmStart = () => {
 	return {

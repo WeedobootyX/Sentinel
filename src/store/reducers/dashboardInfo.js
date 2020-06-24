@@ -6,21 +6,21 @@ const initialState = {
 	error: null
 };
 
-const fetchSiteStart = (state, action) => {
+const fetchDashboardInfoStart = (state, action) => {
 	return updateObject(state, {
 		loading: true,
 		error: null
 	});
 }
 
-const fetchSiteSuccess = (state, action) => {	
+const fetchDashboardInfoSuccess = (state, action) => {	
 	return updateObject(state, {
-		site: action.site,
+		dashboardInfo: action.dashboardInfo,
 		loading:false
 	});
 }
 
-const fetchSiteFail = (state, action) => {
+const fetchDashboardInfoFail = (state, action) => {
 	return updateObject(state, {
 		loading: false, 
 		error: action.error
@@ -29,9 +29,9 @@ const fetchSiteFail = (state, action) => {
 
 const reducer = (state = initialState, action) => {
 	switch (action.type) {
-		case (actionTypes.FETCH_SITE_START): return fetchSiteStart(state, action);
-		case (actionTypes.FETCH_SITE_SUCCESS): return fetchSiteSuccess(state, action);
-		case (actionTypes.FETCH_SITE_FAIL): return fetchSiteFail(state, action);
+		case (actionTypes.FETCH_DASHBOARD_INFO_START): return fetchDashboardInfoStart(state, action);
+		case (actionTypes.FETCH_DASHBOARD_INFO_SUCCESS): return fetchDashboardInfoSuccess(state, action);
+		case (actionTypes.FETCH_DASHBOARD_INFO_FAIL): return fetchDashboardInfoFail(state, action);
 
 		default: return state; 
 	}

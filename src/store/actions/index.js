@@ -1,7 +1,7 @@
 // SITE
 export {
-	fetchSite
-} from './site'; 
+	fetchDashboardInfo
+} from './dashboardInfo'; 
 
 // ALARM
 export {

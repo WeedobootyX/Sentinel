@@ -1,0 +1,16 @@
+.DashboardDeviceContainer {
+
+}
+.DashboardDeviceContainerPassive{
+	background-color: green;
+}
+.DashboardDeviceContainerActive{
+	background-color: yellow;
+	font-size: 88px,
+}
+.DashboardDeviceContainerAlarm{
+	background-color: red;
+}
+.MenuItemHeader{
+	font-size: 22px;
+}

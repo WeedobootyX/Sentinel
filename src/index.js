@@ -7,7 +7,7 @@ import thunk from 'redux-thunk';
 
 import App from './App';
 import alarmReducer from './store/reducers/alarm'; 
-import siteReducer from './store/reducers/site'; 
+import dashboardInfoReducer from './store/reducers/dashboardInfo'; 
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
@@ -15,7 +15,7 @@ const composeEnhancers = process.env.NODE_ENV === 'development' ? window.__REDUX
 
 const rootReducer = combineReducers({
 	alarm: alarmReducer, 
-	site: siteReducer
+	dashboardInfo: dashboardInfoReducer
 });
 
 const store = createStore(rootReducer, composeEnhancers(
@@ -29,16 +29,6 @@ const app = (
 		</BrowserRouter>
 	</Provider>
 );
-
-/* // Old
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-*/
 
 ReactDOM.render(
   app,

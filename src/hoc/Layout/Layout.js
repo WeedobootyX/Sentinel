@@ -40,11 +40,8 @@ class Layout extends Component {
 
 	render(){
 		const strings = new LocalizedStrings(Localizations.localizations); 
-		let jsx = (<Aux>
-						<p>dummy content</p>
-					</Aux>)
-
-		return jsx;
+		let mainJsx = (this.props.children); 
+		return mainJsx;
 	}
 }
 
@@ -55,6 +52,9 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
+	return {
+		fetchDashboardInfo: (siteKey, apiKey) => dispatch(actions.fetchDashboardInfo(siteKey, apiKey))
+	}
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Layout)); 
