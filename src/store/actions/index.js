@@ -1,9 +1,13 @@
-// SITE
+// DASHBOARD
 export {
 	fetchDashboardInfo
 } from './dashboardInfo'; 
 
-// ALARM
+//SITE
+export {
+	setSiteStatus
+} from './site.js';
+// ALARM (ska tas bort)
 export {
 	fetchAlarm
 } from './alarm'; 

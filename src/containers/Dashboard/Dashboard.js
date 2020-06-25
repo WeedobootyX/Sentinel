@@ -6,17 +6,27 @@ import Aux from '../../hoc/ReactAux/ReactAux'
 import classes from './Dashboard.module.css'; 
 import * as Localizations from './Localization'; 
 import * as actions from '../../store/actions/index';
+import DashboardSite from './DashboardSite/DashboardSite';
 import DashboardDevice from './DashboardDevice/DashboardDevice';
 
 class Dashboard extends Component {
+	componentDidMount(){
+		this.props.onFetchDashboardInfo(this.props.match.params.siteKey, 
+							   			 "s3cr3tApiKey");
+		this.timer = setInterval(()=> this.refreshDashboardInfo(), 5000);
+	}
+
+	refreshDashboardInfo() {
+		this.props.onFetchDashboardInfo(this.props.match.params.siteKey, 
+							   			 "s3cr3tApiKey");
+	}
+
+	updateSiteStatusClickHandler = (siteKey, newStatus) => {
+		this.props.setSiteStatus(siteKey, newStatus);
+	}
 
 	state = {
 		dummyParameter: false
-	}
-
-	componentDidMount(){
-		this.props.onFetchDashboardInfo(this.props.match.params.siteKey, 
-							   			"s3cr3tApiKey");
 	}
 
 	render(){
@@ -32,8 +42,12 @@ class Dashboard extends Component {
 			});
 			return (			
 				<Aux>
-					<div className={classes.siteNameContainer}>
-						<h2>Dashboard for {this.props.dashboardInfo.site.description}</h2>
+					<div className={classes.siteContainer}>
+						<DashboardSite site={this.props.dashboardInfo.site} 
+									   activateSiteClick={() => this.updateSiteStatusClickHandler(this.props.dashboardInfo.site.siteKey, 'active')}
+									   deactivateSiteClick={() => this.updateSiteStatusClickHandler(this.props.dashboardInfo.site.siteKey, 'passive')}
+									   resetSiteClick={() => this.updateSiteStatusClickHandler(this.props.dashboardInfo.site.siteKey, 'passive')}
+										/>
 					</div>
 					<div className={classes.deviceRowsContainer}>
 						{deviceListOutput}
@@ -58,6 +72,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
 	return {
 		onFetchDashboardInfo : (token, siteKey) => dispatch(actions.fetchDashboardInfo(token, siteKey)),
+		setSiteStatus : (siteKey, newStatus) => dispatch(actions.setSiteStatus(siteKey, newStatus))
 	}
 }
 

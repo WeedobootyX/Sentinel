@@ -1,0 +1,19 @@
+.DashboardSiteContainer {
+
+}
+.DashboardSiteContainerPassive{
+	background-color: green;
+}
+.DashboardSiteContainerActive{
+	background-color: yellow;
+	font-size: 88px,
+}
+.DashboardSiteContainerAlarm{
+	background-color: red;
+}
+.SiteHeader{
+	font-size: 22px;
+}
+.ActionButton {
+	
+}

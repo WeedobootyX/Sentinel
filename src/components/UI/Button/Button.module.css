@@ -1,0 +1,56 @@
+.Button {
+	background: lightgray;
+	color:black;
+	padding:5px 16px 5px 16px;
+	border-radius: 5px;
+	font-size: 16px;
+	margin: 15px;
+	text-transform: uppercase;
+	min-width: 250px;
+	min-height: 50px;
+	border: none;
+	outline: none;
+}
+
+.Button:hover,
+.Button:active,
+.Button:focus{
+	border: none;
+	outline: none;
+}
+
+.Button:disabled{
+	background-color: gray;
+	-webkit-box-shadow: none!important;
+	-moz-box-shadow: none!important; 
+	box-shadow: none!important; 
+	transition: none!important; 
+}
+
+.Continue {
+	background-color: green;
+	color:#eaeaea;
+}
+
+.Danger {
+	background-color: red;
+	color: white;
+}
+
+.Modify{
+	background-color: blue; 
+	color:#eaeaea;
+}
+
+/* OVERRIDE INPUT ARROWS FOR NUMBER FIELDS */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
