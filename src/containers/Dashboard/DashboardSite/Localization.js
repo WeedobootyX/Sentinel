@@ -2,11 +2,13 @@ export const localizations = {
 	sv:{
 		activateButtonTxt: 'Aktivera',
 		deactivateButtonTxt: 'Avaktivera',
-		resetButtonTxt: 'Återställ'
+		resetButtonTxt: 'Återställ',
+		openDevicePage: 'Öppna device'
 	},
 	en: {
 		activateButtonTxt: 'Activate',
 		deactivateButtonTxt: 'Dectivate',
-		resetButtonTxt: 'Reset'
+		resetButtonTxt: 'Reset',
+		openDevicePage: 'Open device'
 	}
 }

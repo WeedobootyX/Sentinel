@@ -4,6 +4,7 @@ import LocalizedStrings from 'react-localization';
 import classes from './DashboardSite.module.css'; 
 import * as Localizations from './Localization'; 
 import Button from '../../../components/UI/Button/Button';
+import { Link } from 'react-router-dom';
 
 const onClickActionButton = () => {
 	console.log('BUTTON PRESSED');
@@ -40,6 +41,7 @@ const dashboardSite = (props) => {
 	return (
 		<div className={containerClasses}>
 			<h4 className={classes.SiteHeader}>{props.site.name} - {props.site.status}</h4>
+			<Link to="/device:siteId/:deviceId" className={classes.openDeviceLink} >{strings.openDevicePage}</Link>
 			{actionButton}
  		</div>
 	)

@@ -10,26 +10,27 @@ class App extends Component {
   
   render() {    
 
-  let routes = (
-    <Switch>
-      <Route path='/'/>
-    </Switch>
-  ); 
-
-  if(this.props.isAuthenticated){
-    routes = (
+    let routes = (
       <Switch>
-        <Route path='/dashboard/:siteKey' component={AsyncComponents.Dashboard} />
-        <Route path='/alarm/:siteKey' component={AsyncComponents.Alarm} />
-        <Route path='/' />
+        <Route path='/'/>
       </Switch>
-    );
-  }
+    ); 
+
+    if(this.props.isAuthenticated){
+      routes = (
+        <Switch>
+          <Route path='/dashboard/:siteKey' component={AsyncComponents.Dashboard} />
+          <Route path='/alarm/:siteKey' component={AsyncComponents.Alarm} />
+          <Route path='/device/:siteKey/:deviceKey' component={AsyncComponents.Device} />
+          <Route path='/' />
+        </Switch>
+      );
+    }
 
     return (
-        <Layout>
-          {routes}
-        </Layout>
+      <Layout>
+        {routes}
+      </Layout>
     );
   }
 }

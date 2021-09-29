@@ -19,7 +19,7 @@ class Layout extends Component {
 		mainComponentWidth: null
 	}
 
-	componentWillMount(){
+	componentDidMount(){
 		this.setHeadComponentWidth(); 
 	}
 
@@ -28,7 +28,7 @@ class Layout extends Component {
 			this.setState({
 				mainComponentWidth: document.getElementById('mainContainer').offsetWidth
 			})
-		}else{
+		} else{
 			setTimeout(()=> this.setHeadComponentWidth(), 1000);
 		}
 	}

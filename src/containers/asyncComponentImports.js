@@ -7,3 +7,7 @@ export const Dashboard = asyncComponent(() => {
 export const Alarm = asyncComponent(() => {
 	return import('./Alarm/Alarm'); 
 });
+
+export const Device = asyncComponent(() => {
+	return import('./Device/Device'); 
+});
