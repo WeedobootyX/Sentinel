@@ -1,3 +1,8 @@
+// DEVICE INFO
+export {
+	fetchDeviceInfo
+} from './deviceInfo'; 
+
 // DASHBOARD
 export {
 	fetchDashboardInfo

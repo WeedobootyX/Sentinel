@@ -8,6 +8,7 @@ import thunk from 'redux-thunk';
 import App from './App';
 import alarmReducer from './store/reducers/alarm'; 
 import dashboardInfoReducer from './store/reducers/dashboardInfo'; 
+import deviceInfoReducer from './store/reducers/deviceInfo'; 
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
@@ -15,7 +16,8 @@ const composeEnhancers = process.env.NODE_ENV === 'development' ? window.__REDUX
 
 const rootReducer = combineReducers({
 	alarm: alarmReducer, 
-	dashboardInfo: dashboardInfoReducer
+	dashboardInfo: dashboardInfoReducer,
+	deviceInfo: deviceInfoReducer
 });
 
 const store = createStore(rootReducer, composeEnhancers(

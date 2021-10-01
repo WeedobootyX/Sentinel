@@ -9,7 +9,6 @@ import Layout from './hoc/Layout/Layout';
 class App extends Component {
   
   render() {    
-
     let routes = (
       <Switch>
         <Route path='/'/>
